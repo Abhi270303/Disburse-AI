@@ -89,7 +89,7 @@ export function ChatDemo({ initialChatId }) {
     };
 
     initializeChat();
-  }, [currentChatId]); // Only run when currentChatId changes
+  }, [currentChatId, isInitialized]); // Only run when currentChatId or isInitialized changes
 
   // Update current chat when ID changes
   useEffect(() => {

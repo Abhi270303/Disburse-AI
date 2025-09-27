@@ -73,7 +73,7 @@ export function useAutoScroll(dependencies = []) {
       scrollToBottom();
       lastScrollHeight.current = currentScrollHeight;
     }
-  }, [...dependencies, scrollToBottom]);
+  }, [dependencies, scrollToBottom]);
 
   return {
     containerRef,

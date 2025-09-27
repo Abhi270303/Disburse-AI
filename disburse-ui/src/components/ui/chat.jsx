@@ -253,6 +253,7 @@ export const Chat = forwardRef(function Chat(
       currentChatId,
       isEmpty,
       chatMode,
+      handleSubmit,
     ]
   );
 
@@ -530,12 +531,13 @@ export const ChatMessages = forwardRef(function ChatMessages(
 
   // Save scroll position before unmount
   useEffect(() => {
+    const currentContainer = containerRef.current;
     return () => {
-      if (containerRef.current) {
-        lastScrollPosition.current = containerRef.current.scrollTop;
+      if (currentContainer) {
+        lastScrollPosition.current = currentContainer.scrollTop;
       }
     };
-  }, []);
+  }, [containerRef]);
 
   // Add effect to scroll to bottom when messages change
   useEffect(() => {
@@ -565,7 +567,7 @@ export const ChatMessages = forwardRef(function ChatMessages(
         scrollToBottom();
       }
     }
-  }, [messages, scrollToBottom]);
+  }, [messages, scrollToBottom, containerRef]);
 
   // Handle scroll events to determine if we should auto-scroll
   const handleScrollWithCheck = (e) => {
@@ -636,7 +638,7 @@ export const ChatMessages = forwardRef(function ChatMessages(
         setTimeout(scrollToBottom, 60);
       }
     }
-  }, [messages]);
+  }, [messages, containerRef, bottomRef]);
 
   return (
     <>

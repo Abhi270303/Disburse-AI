@@ -42,3 +42,17 @@ export const recordAudio = (function() {
 
   return func;
 })()
+
+export const transcribeAudio = async (audioBlob) => {
+  // Placeholder implementation - replace with actual transcription service
+  console.log("Transcribing audio blob:", audioBlob);
+  
+  // For now, return a placeholder response
+  // In production, you would integrate with a speech-to-text service like:
+  // - OpenAI Whisper API
+  // - Google Speech-to-Text
+  // - Azure Speech Services
+  // - AWS Transcribe
+  
+  return "Transcribed audio text would appear here";
+}
