@@ -147,8 +147,8 @@ export async function predictSafeAddress(
     const contractNetworks = getContractNetworks(CHAIN_IDS.POLYGON_AMOY_TESTNET);
 
     console.log(
-      "🔧 Using custom contract networks for Polygon Amoy Testnet:",
-      contractNetworks
+      "🔧 Using contract networks for Polygon Amoy Testnet:",
+      contractNetworks || "SDK defaults"
     );
 
     // Try multiple RPC endpoints
@@ -161,13 +161,18 @@ export async function predictSafeAddress(
       );
 
       try {
-        // Try with custom contract networks first
+        // Try with custom contract networks first (if available)
         try {
-          const protocolKit = await Safe.init({
+          const initConfig: any = {
             provider: currentRpcUrl,
             predictedSafe,
-            contractNetworks,
-          });
+          };
+          
+          if (contractNetworks) {
+            initConfig.contractNetworks = contractNetworks;
+          }
+          
+          const protocolKit = await Safe.init(initConfig);
 
           const predictedAddress = await protocolKit.getAddress();
           console.log(

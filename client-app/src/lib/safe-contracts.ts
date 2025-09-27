@@ -2,7 +2,7 @@
 // These are the standard Safe contract addresses for Polygon testnet
 
 export const SAFE_CONTRACTS_80002 = {
-  // Core
+  // Core - Using standard Safe contract addresses for Polygon Amoy testnet
   safeProxyFactoryAddress: "0x4e1DCf7AD4e460CfD30791CCC4F9c8a4f820ec67",
   // L1/L2 singleton addresses (SDK expects these keys)
   safeSingletonAddress: "0x41675C099F32341bf84BFc5382aF534df5C7461a",
@@ -33,8 +33,9 @@ export const SAFE_CONTRACTS_MAP: Record<number, any> = {
 // Helper function to get contract networks configuration for Safe Protocol Kit
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getContractNetworks = (chainId: number): any | undefined => {
-  // Only override for Polygon Amoy Testnet (80002). For other chains, let SDK defaults apply.
-  if (chainId !== 80002) return undefined;
+  // For Polygon Amoy Testnet (80002), let the SDK use its default addresses
+  // This ensures we use the correct, officially deployed Safe contracts
+  if (chainId === 80002) return undefined;
 
   const contracts = SAFE_CONTRACTS_MAP[chainId];
   if (!contracts) return undefined;
