@@ -224,7 +224,7 @@ app.get("/health", (req, res) => {
 export default app;
 
 // Start server only if not in Vercel environment
-if (process.env.NODE_ENV !== 'production' || process.env.VERCEL !== '1') {
+if (process.env.NODE_ENV !== 'production' && process.env.VERCEL !== '1') {
   const port = process.env.PORT || 4022;
   app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
