@@ -1,6 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
-import { getAuthState } from "@/lib/utils";
+// Removed unused imports
 import Withdraw from "../withdraw";
 
 const Home = () => {

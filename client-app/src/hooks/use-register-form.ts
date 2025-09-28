@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { usePrivy, useLogin } from "@privy-io/react-auth";
+import { usePrivy } from "@privy-io/react-auth";
 import {
   generateKeysFromSignature,
   extractViewingPrivateKeyNode,
@@ -61,7 +61,7 @@ export const useRegisterForm = () => {
     walletType: "personal",
   });
 
-  const { authenticated, ready, user, logout } = usePrivy();
+  const { authenticated, ready, user } = usePrivy();
   const { data: walletClient } = useWalletClient();
   const { address } = useAccount();
 

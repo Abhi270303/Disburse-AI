@@ -42,7 +42,6 @@ import { useUser } from "@/hooks/use-user-data";
 import { WithdrawalTableSkeleton } from "@/components/ui/loading-skeletons";
 import {
   useWalletClient,
-  useAccount,
   usePublicClient,
   useSwitchChain,
 } from "wagmi";

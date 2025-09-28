@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Check, Search, X, ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { WHITELISTED_NETWORKS } from "@/lib/constants";
 import { type AuthState } from "@/lib/utils";
 import { useRegisterForm } from "@/hooks/use-register-form";
-import { usePrivy, useLogin } from "@privy-io/react-auth";
+import { usePrivy } from "@privy-io/react-auth";
 import { useWalletClient } from "wagmi";
 import { login as saveAuthState } from "@/lib/utils";
 
@@ -27,12 +27,9 @@ export default function AuthPage({
   const {
     formData,
     selectedTokens,
-    validateUsername,
-    validateWebsiteUri,
     handleInputChange,
     handleTokenToggle,
     handleWalletTypeChange,
-    isFormValid,
     handleSubmit: handleRegisterSubmit,
     isLoggingIn,
   } = useRegisterForm();
@@ -41,7 +38,7 @@ export default function AuthPage({
   const { username, websiteUri, walletType } = formData;
 
   // Privy hooks for authentication
-  const { authenticated, ready, user, logout } = usePrivy();
+  const { } = usePrivy();
   const { data: walletClient } = useWalletClient();
 
   // Remove login hook since user is already authenticated

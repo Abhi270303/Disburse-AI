@@ -163,7 +163,19 @@ export async function predictSafeAddress(
       try {
         // Try with custom contract networks first (if available)
         try {
-          const initConfig: any = {
+          const initConfig: {
+            provider: string;
+            predictedSafe: {
+              safeAccountConfig: {
+                owners: string[];
+                threshold: number;
+              };
+              safeDeploymentConfig: {
+                saltNonce: string;
+              };
+            };
+            contractNetworks?: Record<number, Record<string, string>>;
+          } = {
             provider: currentRpcUrl,
             predictedSafe,
           };
@@ -217,22 +229,10 @@ export async function predictSafeAddress(
   } catch (error) {
     console.error("❌ Error predicting safe address:", error);
 
-    // Final fallback: Calculate Safe address manually if Protocol Kit fails
-    console.log("🔄 Attempting manual Safe address calculation...");
-    try {
-      // This is a simplified manual calculation - you might need to adjust based on your specific needs
-      const saltNonce =
-        "0x0000000000000000000000000000000000000000000000000000000000000000";
-      const factoryAddress = "0x4e1DCf7AD4e460CfD30791CCC4F9c8a4f820ec67";
-      const singletonAddress = "0x41675C099F32341bf84BFc5382aF534df5C7461a";
-
-      // Note: This is a simplified approach. The actual Safe address calculation is more complex
-      // and involves CREATE2 opcode simulation. For now, we'll throw the original error.
-      throw new Error(
-        `Safe address prediction failed. Please check RPC connectivity and contract addresses. Original error: ${error}`
-      );
-    } catch (manualError) {
-      throw error; // Throw the original error
-    }
+    // Final fallback: Re-throw the original error
+    console.log("🔄 Safe address prediction failed, re-throwing original error...");
+    throw new Error(
+      `Safe address prediction failed. Please check RPC connectivity and contract addresses. Original error: ${error}`
+    );
   }
 }
