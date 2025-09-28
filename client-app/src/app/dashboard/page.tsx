@@ -46,8 +46,8 @@ const Page = () => {
   };
 
   const paymentUrl = username
-    ? `https://v1.app.unwallet.io/${username}/qrcode`
-    : "https://v1.app.unwallet.io/vwaa/qrcode";
+    ? `http://localhost:3001/${username}/qrcode`
+    : "http://localhost:3001/0xabhii/qrcode";
   const apiKey = "sk_test_1234567890abcdef";
   const integrationCode = `<!-- Add this div where you want the payment widget -->
 <div id="crypto-payment" 

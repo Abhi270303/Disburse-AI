@@ -23,7 +23,7 @@ const GetStarted: React.FC<GetStartedProps> = ({
               height={40}
             />
             <span className="text-card-foreground font-semibold text-2xl font-mono">
-              Unwallet
+              Disburse AI
             </span>
           </div>
 
@@ -105,7 +105,7 @@ const GetStarted: React.FC<GetStartedProps> = ({
               </div>
 
               <p className="text-muted-foreground text-xs text-center">
-                By using Unwallet, you agree to the{" "}
+                By using Disburse AI, you agree to the{" "}
                 <a
                   href="#"
                   className="text-primary hover:text-primary/80 transition-colors"

@@ -126,7 +126,7 @@ export const getViemTransports = (networks: Network[]) => {
 };
 
 export const SITE = {
-  name: "Unwallet",
+  name: "Disburse AI",
   description: "One wallet for payments on any chain.",
   logo: "/logo.svg",
 };

@@ -702,7 +702,7 @@ export default function AuthPage({
               height={40}
             />
             <span className="text-card-foreground font-semibold text-2xl font-mono">
-              Unwallet
+              Disburse AI
             </span>
           </div>
 
@@ -848,7 +848,7 @@ export default function AuthPage({
                 WebkitTextStroke: "3px rgba(255,255,255,0.25)",
               }}
             >
-              UNWALLET
+              Disburse AI
             </div>
           </div>
 

@@ -80,7 +80,7 @@ const AuthWrapper: React.FC<AuthWrapperProps> = ({ children }) => {
                 height={40}
               />
               <span className="text-card-foreground font-semibold text-2xl font-mono">
-                Unwallet
+                Disburse AI
               </span>
             </div>
 
@@ -122,14 +122,14 @@ const AuthWrapper: React.FC<AuthWrapperProps> = ({ children }) => {
                       </div>
                       <p className="text-muted-foreground text-sm leading-relaxed">
                         Connect your wallet and authenticate with Privy to
-                        access Unwallet
+                        access Disburse AI
                       </p>
                     </div>
                   </button>
                 </div>
 
                 <p className="text-muted-foreground text-xs text-center">
-                  By using Unwallet, you agree to the{" "}
+                  By using Disburse AI, you agree to the{" "}
                   <a
                     href="#"
                     className="text-primary hover:text-primary/80 transition-colors"
@@ -158,7 +158,7 @@ const AuthWrapper: React.FC<AuthWrapperProps> = ({ children }) => {
             {/* Footer */}
             <div className="mt-16 pt-8">
               <p className="text-muted-foreground text-xs text-center">
-                © Copyright Unwallet 2025
+                © Copyright Disburse AI 2025
               </p>
             </div>
           </div>
