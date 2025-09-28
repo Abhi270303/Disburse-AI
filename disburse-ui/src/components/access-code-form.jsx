@@ -177,7 +177,7 @@ export function AccessCodeForm({ onSuccess }) {
             window.open("https://twitter.com/AttenomicsLabs", "_blank")
           }
         >
-          Contact @AttenomicsLabs
+          Contact @DisburseAI
         </Button>
       </CardFooter>
     </Card>

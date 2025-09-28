@@ -253,7 +253,6 @@ export const Chat = forwardRef(function Chat(
       currentChatId,
       isEmpty,
       chatMode,
-      handleSubmit,
     ]
   );
 
@@ -424,7 +423,7 @@ export const Chat = forwardRef(function Chat(
                 src="/logo/main.svg"
                 width={48}
                 height={48}
-                alt="Attenomics logo"
+                alt="Disburse logo"
                 className={cn(
                   "rounded-xl transition-colors",
                   theme === "light" && "invert"
@@ -432,7 +431,7 @@ export const Chat = forwardRef(function Chat(
               />
             </div>
             <div className="text-2xl font-extrabold tracking-tight text-foreground mb-1">
-              Attenomics AI
+              Disburse AI
             </div>
             <div className="text-sm text-muted-foreground mb-2">
               Conversational AI for the future
@@ -459,7 +458,7 @@ export const Chat = forwardRef(function Chat(
             </ChatForm>
           </div>
           <div className="mt-6 text-xs text-muted-foreground text-center">
-            Powered by <span className="font-semibold">Attenomics AI</span>
+            Powered by <span className="font-semibold">Disburse AI</span>
           </div>
         </div>
       ) : (
@@ -531,13 +530,12 @@ export const ChatMessages = forwardRef(function ChatMessages(
 
   // Save scroll position before unmount
   useEffect(() => {
-    const currentContainer = containerRef.current;
     return () => {
-      if (currentContainer) {
-        lastScrollPosition.current = currentContainer.scrollTop;
+      if (containerRef.current) {
+        lastScrollPosition.current = containerRef.current.scrollTop;
       }
     };
-  }, [containerRef]);
+  }, []);
 
   // Add effect to scroll to bottom when messages change
   useEffect(() => {
@@ -567,7 +565,7 @@ export const ChatMessages = forwardRef(function ChatMessages(
         scrollToBottom();
       }
     }
-  }, [messages, scrollToBottom, containerRef]);
+  }, [messages, scrollToBottom]);
 
   // Handle scroll events to determine if we should auto-scroll
   const handleScrollWithCheck = (e) => {
@@ -638,7 +636,7 @@ export const ChatMessages = forwardRef(function ChatMessages(
         setTimeout(scrollToBottom, 60);
       }
     }
-  }, [messages, containerRef, bottomRef]);
+  }, [messages]);
 
   return (
     <>

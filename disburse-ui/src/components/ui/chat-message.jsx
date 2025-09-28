@@ -2,7 +2,6 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { cva } from "class-variance-authority";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import {
   Ban,
   ChevronRight,
@@ -516,11 +515,9 @@ export const ChatMessage = ({
               <h4 className="text-sm font-medium text-foreground">
                 QR Code for Safe Address
               </h4>
-              <Image
+              <img
                 src={qrCodeData.qrCodeDataURL}
                 alt="QR Code for Safe Address"
-                width={192}
-                height={192}
                 className="w-48 h-48 border border-border/50 rounded-lg"
               />
               <div className="text-xs text-muted-foreground text-center space-y-1">

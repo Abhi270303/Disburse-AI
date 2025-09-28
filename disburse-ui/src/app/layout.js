@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Attenomics AI",
+  title: "Disburse AI",
   description: "",
 };
 

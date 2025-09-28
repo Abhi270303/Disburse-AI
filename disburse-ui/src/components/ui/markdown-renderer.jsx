@@ -4,7 +4,6 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
-import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 import { CopyButton } from "@/components/ui/copy-button";
@@ -177,11 +176,9 @@ const COMPONENTS = {
     // Handle data URLs (like QR codes)
     if (src && (src.startsWith("data:") || src.startsWith("http"))) {
       return (
-        <Image
+        <img
           src={src}
           alt={alt || "Image"}
-          width={500}
-          height={300}
           className="max-w-full h-auto rounded-md border border-border/50 my-2"
           {...props}
         />

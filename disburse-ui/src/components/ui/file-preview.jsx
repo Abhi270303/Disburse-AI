@@ -11,7 +11,7 @@ export const FilePreview = React.forwardRef((props, ref) => {
 
   const getFileIcon = () => {
     if (fileType?.startsWith("image/")) {
-      return <Image className="h-6 w-6 text-foreground" aria-label="Image file" />;
+      return <Image className="h-6 w-6 text-foreground" />;
     }
     if (
       fileType?.startsWith("text/") ||

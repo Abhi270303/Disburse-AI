@@ -141,14 +141,14 @@ export function ChatSidebar({
                     src={"/logo/main.svg"}
                     width={24}
                     height={24}
-                    alt="Attenomics logo"
+                    alt="Disburse logo"
                     className={cn(
                       "transition-colors",
                       theme === "light" && "invert"
                     )}
                   />
                   <span className="text-xl font-medium tracking-tight">
-                    Attenomics
+                    Disburse
                   </span>
                 </Link>
                 <Button
@@ -311,14 +311,14 @@ export function ChatSidebar({
                 src={"/logo/main.svg"}
                 width={24}
                 height={24}
-                alt="Attenomics logo"
+                alt="Disburse logo"
                 className={cn(
                   "transition-colors",
                   theme === "light" && "invert"
                 )}
               />
               <span className="text-xl font-medium tracking-tight">
-                Attenomics
+                Disburse
               </span>
             </Link>
             <Button
